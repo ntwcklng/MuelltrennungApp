@@ -7,7 +7,8 @@ import {
   StyleSheet,
   TouchableHighlight,
   ScrollView,
-  View
+  View,
+  Image
 } from 'react-native';
 
 
@@ -35,6 +36,7 @@ export default class MainView extends Component {
           onPress={() => this._onPressBtn(tonne.name)}
           style={styles.TonnenButton}
           underlayColor='#02B875'>
+          <Image source={require('/Images/Buttons/' + tonne.img)}/>
           <Text>{tonne.displayName}</Text>
         </TouchableHighlight>
       )
