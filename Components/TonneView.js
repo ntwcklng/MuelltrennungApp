@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import GraueTonne from './Tonnen/Grau.js';
 import GelbeTonne from './Tonnen/Gelb.js';
 import BlaueTonne from './Tonnen/Blau.js';
+import BioTonne from './Tonnen/Bio.js';
 import HeadlineText from './HeadlineText.js';
 import {
   Text,
@@ -17,19 +18,21 @@ export default class TonneView extends Component {
     let Tonne;
     switch(this.props.tonne) {
       case 'blau':
-      Tonne = (<BlaueTonne />);
-      break;
+        Tonne = (<BlaueTonne />);
+        break;
       case 'grau':
-      Tonne = (<GraueTonne />);
-      break
+        Tonne = (<GraueTonne />);
+        break;
       case 'gelb':
-      Tonne = (<GelbeTonne />);
-      break;
+        Tonne = (<GelbeTonne />);
+        break;
+      case 'bio':
+        Tonne = (<BioTonne />);
+        break;
     }
     return (
       <View style={{backgroundColor: '#fbfbfb', flex:1, padding: 0}}>
         <ScrollView style={{padding: 10}}>
-          <HeadlineText mainColor={true}>TONNE</HeadlineText>
           {Tonne}
         </ScrollView>
       </View>

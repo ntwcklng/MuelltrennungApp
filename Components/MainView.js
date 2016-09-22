@@ -30,21 +30,41 @@ export default class MainView extends Component {
   }
   render() {
     const TonnenItems = Tonnen.map((tonne) => {
+      let MuellImg;
+      switch(tonne.name) {
+        case 'blau':
+          MuellImg = require('./Images/Blaue.png');
+          break;
+        case 'grau':
+          MuellImg = require('./Images/Graue.png');
+          break;
+        case 'gelb':
+          MuellImg = require('./Images/Gelbe.png');
+          break;
+        case 'bio':
+          MuellImg = require('./Images/Bio.png');
+          break;
+      };
       return (
         <TouchableHighlight
           key={tonne.name}
           onPress={() => this._onPressBtn(tonne.name)}
           style={styles.TonnenButton}
           underlayColor='#02B875'>
-          <Image source={require('/Images/Buttons/' + tonne.img)}/>
-          <Text>{tonne.displayName}</Text>
+          <View>
+          <Image
+            source={MuellImg}
+            style={styles.ImgBtn}
+          />
+          <Text style={styles.TonnenDesc}>{tonne.desc}</Text>
+          </View>
         </TouchableHighlight>
       )
     })
     return (
       <View style={styles.container}>
-        <ScrollView centerContent={false}>
-          <HeadlineText center={true} mainColor={true}>Was kommt wo rein?</HeadlineText>
+        <ScrollView>
+          <HeadlineText center={true} mainColor={true}>Was möchtest du entsorgen?</HeadlineText>
           {TonnenItems}
         </ScrollView>
       </View>
@@ -52,17 +72,24 @@ export default class MainView extends Component {
   }
 }
 const styles = StyleSheet.create({
+  TonnenDesc: {
+    marginTop: 15,
+  },
+  ImgBtn: {
+    height: 100,
+    width: 100,
+    alignSelf: 'center'
+  },
   TonnenButton: {
-    backgroundColor: '#f0f0f0',
+    backgroundColor: '#fbfbfb',
     marginBottom: 10,
     padding: 10,
-    flex:0.5,
+    flex:1,
   },
   container: {
     flex: 1,
-    flexDirection: 'column',
+    padding: 0,
     justifyContent: 'center',
-    alignItems: 'center',
     backgroundColor: '#FFF',
   },
 

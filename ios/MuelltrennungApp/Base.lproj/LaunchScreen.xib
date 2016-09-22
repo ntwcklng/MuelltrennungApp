@@ -12,20 +12,23 @@
             <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xwK-mk-qwQ">
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="APP_Screen_Loading_NEU" translatesAutoresizingMaskIntoConstraints="NO" id="1iH-xg-b2O">
+                    <frame key="frameInset" minX="140" minY="176" width="240" height="128"/>
+                </imageView>
             </subviews>
             <color key="backgroundColor" red="0.14901960784313725" green="0.72156862745098038" blue="0.45882352941176469" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstItem="xwK-mk-qwQ" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Esw-vQ-z7d"/>
-                <constraint firstItem="xwK-mk-qwQ" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="rj9-lx-qDV"/>
+                <constraint firstAttribute="bottom" secondItem="1iH-xg-b2O" secondAttribute="bottom" id="PwO-3o-HuV"/>
+                <constraint firstItem="1iH-xg-b2O" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="REL-yV-n7r"/>
+                <constraint firstAttribute="trailing" secondItem="1iH-xg-b2O" secondAttribute="trailing" id="f93-0f-SiP"/>
+                <constraint firstItem="1iH-xg-b2O" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="h8r-7e-h9l"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="550" y="445"/>
         </view>
     </objects>
+    <resources>
+        <image name="APP_Screen_Loading_NEU" width="750" height="1334"/>
+    </resources>
 </document>
