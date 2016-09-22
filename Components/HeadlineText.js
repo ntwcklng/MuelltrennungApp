@@ -9,7 +9,7 @@ export default class HeadlineText extends Component {
     const textColor = (this.props.mainColor) ? '#02B875' : '#585858';
     const textAlign = (this.props.center) ? 'center' : 'left';
     return (
-      <Text style={{margin: 10, fontSize: 25, fontFamily: 'Indie Flower', color: textColor, textAlign: textAlign}}>{this.props.children}</Text>
+      <Text style={{margin: 10, fontSize: 27, fontFamily: 'Indie Flower', color: textColor, textAlign: textAlign}}>{this.props.children}</Text>
     );
   }
 }

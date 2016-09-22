@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import HeadlineText from '../HeadlineText.js';
+import DoDont from '../DoDont.js';
 import {
   Text,
   StyleSheet,
@@ -8,48 +9,30 @@ import {
   View
 } from 'react-native';
 
+const DO = [
+  'Asche (kalt!)',
+  'Brot',
+  'Fisch & Fleisch',
+  'Kondome',
+  'Monatsbinden',
+  'Pflaster',
+  'Putztücher',
+  'Rasierklingen',
+  'Speisereste',
+  'usw.'
+];
+
+const DONT = [
+  'Alles was irgendwie wiederverwertet werden kann, gehört nicht in den Restmüll!'
+];
+
 
 export default class GraueTonne extends Component {
   render() {
     return (
       <View style={{backgroundColor: '#fbfbfb', flex:1, padding: 0}}>
           <HeadlineText mainColor={true} center={true}>Huhu</HeadlineText>
-          <Text>graue tonne</Text>
-          <Text>graue tonne</Text>
-          <Text>graue tonne</Text>
-          <Text>graue tonne</Text>
-          <Text>graue tonne</Text>
-          <Text>graue tonne</Text>
-          <Text>graue tonne</Text>
-          <Text>graue tonne</Text>
-          <Text>graue tonne</Text>
-          <Text>graue tonne</Text>
-          <Text>graue tonne</Text>
-          <Text>graue tonne</Text>
-          <Text>graue tonne</Text>
-          <Text>graue tonne</Text>
-          <Text>graue tonne</Text>
-          <Text>graue tonne</Text>
-          <Text>graue tonne</Text>
-          <Text>graue tonne</Text>
-          <Text>graue tonne</Text>
-          <Text>graue tonne</Text>
-          <Text>graue tonne</Text>
-          <Text>graue tonne</Text>
-          <Text>graue tonne</Text>
-          <Text>graue tonne</Text>
-          <Text>graue tonne</Text>
-          <Text>graue tonne</Text>
-          <Text>graue tonne</Text>
-          <Text>graue tonne</Text>
-          <Text>graue tonne</Text>
-          <Text>graue tonne</Text>
-          <Text>graue tonne</Text>
-          <Text>graue tonne</Text>
-          <Text>graue tonne</Text>
-          <Text>graue tonne</Text>
-          <Text>graue tonne</Text>
-          <Text>graue tonne</Text>
+          <DoDont do={DO} dont={DONT}/>
       </View>
     );
   }
@@ -60,15 +43,5 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#02b875',
-    marginBottom: 5,
   },
 });

@@ -33,11 +33,11 @@ const DONT = [
 ];
 
 
-export default class BioTonne extends Component {
+export default class Sondermuell extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <HeadlineText mainColor={true} center={true}>Bio Tonne</HeadlineText>
+        <HeadlineText mainColor={true} center={true}>Sondermüll</HeadlineText>
         <DoDont do={DO} dont={DONT}/>
       </View>
     );
@@ -48,15 +48,5 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 20,
     backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#02b875',
-    marginBottom: 5,
   },
 });

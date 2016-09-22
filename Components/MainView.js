@@ -44,6 +44,18 @@ export default class MainView extends Component {
         case 'bio':
           MuellImg = require('./Images/Bio.png');
           break;
+        case 'altglas':
+          MuellImg = require('./Images/Altglas.png');
+          break;
+        case 'sperrmüll':
+          MuellImg = require('./Images/Sperrmuell.png');
+          break;
+        case 'sondermüll':
+          MuellImg = require('./Images/Sondermuell.png');
+          break;
+        case 'elektro':
+          MuellImg = require('./Images/Elektro.png');
+          break;
       };
       return (
         <TouchableHighlight
@@ -74,6 +86,8 @@ export default class MainView extends Component {
 const styles = StyleSheet.create({
   TonnenDesc: {
     marginTop: 15,
+    color: '#585858',
+    textAlign: 'center',
   },
   ImgBtn: {
     height: 100,
@@ -82,7 +96,7 @@ const styles = StyleSheet.create({
   },
   TonnenButton: {
     backgroundColor: '#fbfbfb',
-    marginBottom: 10,
+    marginBottom: 20,
     padding: 10,
     flex:1,
   },
@@ -92,5 +106,4 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     backgroundColor: '#FFF',
   },
-
 });

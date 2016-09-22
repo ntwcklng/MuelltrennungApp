@@ -31,7 +31,7 @@ export default class TonneView extends Component {
         break;
     }
     return (
-      <View style={{backgroundColor: '#fbfbfb', flex:1, padding: 0}}>
+      <View style={styles.container}>
         <ScrollView style={{padding: 10}}>
           {Tonne}
         </ScrollView>
@@ -42,18 +42,7 @@ export default class TonneView extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#02b875',
-    marginBottom: 5,
+    padding: 0,
+    backgroundColor: '#fbfbfb',
   },
 });

@@ -3,19 +3,30 @@ import HeadlineText from './HeadlineText.js';
 import {
   Text,
   View,
-  ScrollView
+  ScrollView,
+  StyleSheet
 } from 'react-native';
 
 
 export default class Hilfe extends Component {
   render() {
     return (
-      <View style={{backgroundColor: '#fbfbfb', flex:1, padding: 0}}>
+      <View style={styles.container}>
         <ScrollView style={{padding: 10}}>
           <HeadlineText mainColor={true} center={true}>Warum?</HeadlineText>
-          <Text>Darum.</Text>
+          <Text style={styles.text}>Darum.</Text>
         </ScrollView>
       </View>
     );
   }
 }
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    padding: 0,
+    backgroundColor: '#fbfbfb',
+  },
+  text: {
+    color: '#585858'
+  },
+});
