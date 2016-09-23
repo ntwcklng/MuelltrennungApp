@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import HeadlineText from './HeadlineText.js';
+import HeadlineText from '../HeadlineText.js';
 import {
   Text,
   View,
@@ -12,7 +12,7 @@ export default class Hilfe extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <ScrollView style={{padding: 10}}>
+        <ScrollView style={{padding: 20}}>
           <HeadlineText mainColor={true} center={true}>Warum?</HeadlineText>
           <Text style={styles.text}>In Deutschland fallen jedes Jahr über 40 Millionen Tonnen Hausmüll an, daher ist es besonders wichtig, diese Menge am besten zu reduzieren und richtig zu trennen.</Text>
           <Text />
@@ -25,8 +25,6 @@ export default class Hilfe extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 0,
-    backgroundColor: '#fbfbfb',
   },
   text: {
     color: '#585858'

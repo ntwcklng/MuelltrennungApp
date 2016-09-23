@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import TonneView from './TonneView.js';
-import Tonnen from './Tonnen.js';
-import HeadlineText from './HeadlineText.js';
+import Tonnen from '../Tonnen.js';
+import HeadlineText from '../HeadlineText.js';
 import {
   Text,
   StyleSheet,
@@ -24,7 +24,6 @@ export default class MainView extends Component {
     const title = tonne.toUpperCase();
     this.props.navigator.push({
       component: TonneView,
-      title,
       passProps: { tonne }
     })
   }
@@ -33,28 +32,28 @@ export default class MainView extends Component {
       let MuellImg;
       switch(tonne.name) {
         case 'blau':
-          MuellImg = require('./Images/Blaue.png');
+          MuellImg = require('../Images/Blaue.png');
           break;
         case 'grau':
-          MuellImg = require('./Images/Graue.png');
+          MuellImg = require('../Images/Graue.png');
           break;
         case 'gelb':
-          MuellImg = require('./Images/Gelbe.png');
+          MuellImg = require('../Images/Gelbe.png');
           break;
         case 'bio':
-          MuellImg = require('./Images/Bio.png');
+          MuellImg = require('../Images/Bio.png');
           break;
         case 'altglas':
-          MuellImg = require('./Images/Altglas.png');
+          MuellImg = require('../Images/Altglas.png');
           break;
         case 'sperrmüll':
-          MuellImg = require('./Images/Sperrmuell.png');
+          MuellImg = require('../Images/Sperrmuell.png');
           break;
         case 'sondermüll':
-          MuellImg = require('./Images/Sondermuell.png');
+          MuellImg = require('../Images/Sondermuell.png');
           break;
         case 'elektro':
-          MuellImg = require('./Images/Elektro.png');
+          MuellImg = require('../Images/Elektro.png');
           break;
       };
       return (

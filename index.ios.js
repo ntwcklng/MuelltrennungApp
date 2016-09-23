@@ -11,8 +11,8 @@ import {
   NavigatorIOS
 } from 'react-native';
 
-import Hilfe from './Components/Hilfe.js';
-import MainView from './Components/MainView.js';
+import Hilfe from './Components/Views/Hilfe.js';
+import MainView from './Components/Views/MainView.js';
 
 class MuelltrennungApp extends Component {
   _showHelp() {

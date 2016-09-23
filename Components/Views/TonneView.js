@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import GraueTonne from './Tonnen/Grau.js';
-import GelbeTonne from './Tonnen/Gelb.js';
-import BlaueTonne from './Tonnen/Blau.js';
-import BioTonne from './Tonnen/Bio.js';
-import Altglas from './Tonnen/Altglas.js';
-import Sondermuell from './Tonnen/Sondermuell.js';
-import Sperrmuell from './Tonnen/Sperrmuell.js';
-import HeadlineText from './HeadlineText.js';
+import GraueTonne from '../Tonnen/Grau.js';
+import GelbeTonne from '../Tonnen/Gelb.js';
+import BlaueTonne from '../Tonnen/Blau.js';
+import BioTonne from '../Tonnen/Bio.js';
+import Altglas from '../Tonnen/Altglas.js';
+import Sondermuell from '../Tonnen/Sondermuell.js';
+import Sperrmuell from '../Tonnen/Sperrmuell.js';
+import HeadlineText from '../HeadlineText.js';
 import {
   Text,
   StyleSheet,
