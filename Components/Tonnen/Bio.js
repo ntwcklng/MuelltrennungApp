@@ -10,33 +10,40 @@ import {
   TouchableHighlight,
   ScrollView,
   View,
-  Image,
+  Image
 } from 'react-native';
 
 const DO = [
-  'Asche (kalt!)',
-  'Brot',
-  'Fisch & Fleisch',
-  'Kondome',
-  'Monatsbinden',
-  'Pflaster',
-  'Putztücher',
-  'Rasierklingen',
-  'Speisereste',
+  'Bananenschalen',
+  'Blumenerde',
+  'Eierschalen',
+  'Gartenabfälle',
+  'Kaffeesatz',
+  'Nussschalen',
+  'Küchentücher',
+  'Salatblätter',
+  'Teebeutel',
+  'Topfblumen',
 ];
 
 const DONT = [
-  'Alles, was recycelt werden kann, gehört nicht in den Restmüll!'
+  'Asche',
+  'Brot',
+  'Fisch',
+  'Fleisch',
+  'Käse',
+  'Zigaretten',
+  'Wurst'
 ];
 
 
-export default class GraueTonne extends Component {
+export default class BioTonne extends Component {
   render() {
     return (
       <View style={styles.container}>
-          <HeadlineText mainColor={true} center={true}>Graue Tonne</HeadlineText>
-          <AnimImg tonne='grau' />
-          <DoDont do={DO} dont={DONT}/>
+        <HeadlineText mainColor={true} center={true}>Bio Tonne</HeadlineText>
+        <AnimImg tonne='bio' />
+        <DoDont do={DO} dont={DONT}/>
       </View>
     );
   }
