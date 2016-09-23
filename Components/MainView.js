@@ -95,7 +95,7 @@ const styles = StyleSheet.create({
     alignSelf: 'center'
   },
   TonnenButton: {
-    backgroundColor: '#fbfbfb',
+    backgroundColor: '#fff',
     marginBottom: 20,
     padding: 10,
     flex:1,
@@ -104,6 +104,5 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 0,
     justifyContent: 'center',
-    backgroundColor: '#FFF',
   },
 });

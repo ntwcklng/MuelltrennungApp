@@ -1,16 +1,20 @@
 import React, { Component } from 'react';
 import HeadlineText from '../HeadlineText.js';
 import DoDont from '../DoDont.js';
+import GlobalStyle from '../GlobalStyle.js';
+import AnimImg from '../AnimImg.js';
+
 import {
   Text,
   StyleSheet,
   TouchableHighlight,
   ScrollView,
-  View
+  View,
+  Image
 } from 'react-native';
 
 const DO = [
-  'Banenenschalen',
+  'Bananenschalen',
   'Blumenerde',
   'Eierschalen',
   'Gartenabfälle',
@@ -38,6 +42,7 @@ export default class BioTonne extends Component {
     return (
       <View style={styles.container}>
         <HeadlineText mainColor={true} center={true}>Bio Tonne</HeadlineText>
+        <AnimImg tonne='bio' />
         <DoDont do={DO} dont={DONT}/>
       </View>
     );
@@ -46,17 +51,5 @@ export default class BioTonne extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 20,
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#02b875',
-    marginBottom: 5,
   },
 });

@@ -1,35 +1,36 @@
 import React, { Component } from 'react';
 import HeadlineText from '../HeadlineText.js';
 import DoDont from '../DoDont.js';
+import AnimImg from '../AnimImg.js';
+import GlobalStyle from '../GlobalStyle.js';
+
 import {
   Text,
   StyleSheet,
   TouchableHighlight,
   ScrollView,
-  View
+  View,
+  Image,
 } from 'react-native';
 
 const DO = [
-  'Banenenschalen',
-  'Blumenerde',
-  'Eierschalen',
-  'Gartenabfälle',
-  'Kaffeesatz',
-  'Nussschalen',
-  'Küchentücher',
-  'Salatblätter',
-  'Teebeutel',
-  'Topfblumen',
+  'leere Getränkeflaschen',
+  'Konservengläser',
+  'Marmeladengläser',
+  'Senfgläser',
+  'pharmazeutische Glasbehälter'
 ];
 
 const DONT = [
-  'Asche',
-  'Brot',
-  'Fisch',
-  'Fleisch',
-  'Käse',
-  'Zigaretten',
-  'Wurst'
+  'Porzellan und Keramik',
+  'feuerfestes Geschirr',
+  'Trinkgläser',
+  'Fensterglas',
+  'Spiegel',
+  'Weihnachtsbaumkugeln',
+  'Ceran-Kochfelder',
+  'Behälter aus Bleikristall wie z.b. Blumenvasen, Aschenbecher oder Weingläser',
+  'Autoscheiben und -lampen',
 ];
 
 
@@ -38,6 +39,7 @@ export default class Altglas extends Component {
     return (
       <View style={styles.container}>
         <HeadlineText mainColor={true} center={true}>Altglas</HeadlineText>
+        <AnimImg tonne='altglas' />
         <DoDont do={DO} dont={DONT}/>
       </View>
     );
@@ -46,7 +48,5 @@ export default class Altglas extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 20,
-    backgroundColor: '#F5FCFF',
   },
 });

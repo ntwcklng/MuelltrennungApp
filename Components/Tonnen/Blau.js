@@ -1,22 +1,26 @@
 import React, { Component } from 'react';
 import HeadlineText from '../HeadlineText.js';
 import DoDont from '../DoDont.js';
+import GlobalStyle from '../GlobalStyle.js';
+import AnimImg from '../AnimImg.js';
+
 import {
   Text,
   StyleSheet,
   TouchableHighlight,
   ScrollView,
-  View
+  View,
+  Image,
 } from 'react-native';
 
 const DO = [
   'Briefumschläge',
-  'Brottütchen',
+  'Brötchentüten',
   'Eierkartons',
   'Kataloge',
   'Prospekte',
   'Müslischachteln',
-  'Klopapierrollen',
+  'Toilettenpapierrollen',
   'Zeitschriften',
   'Zeitungen'
 ];
@@ -37,6 +41,7 @@ export default class BlaueTonne extends Component {
     return (
       <View style={styles.container}>
         <HeadlineText mainColor={true} center={true}>Blaue Tonne</HeadlineText>
+        <AnimImg tonne='blau' />
         <DoDont do={DO} dont={DONT}/>
       </View>
     );
@@ -45,17 +50,5 @@ export default class BlaueTonne extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 20,
-    backgroundColor: '#fbfbfb',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#02b875',
-    marginBottom: 5,
   },
 });

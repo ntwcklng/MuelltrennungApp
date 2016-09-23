@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
 import HeadlineText from '../HeadlineText.js';
 import DoDont from '../DoDont.js';
+import GlobalStyle from '../GlobalStyle.js';
+import AnimImg from '../AnimImg.js';
+
 import {
   Text,
   StyleSheet,
   TouchableHighlight,
   ScrollView,
-  View
+  View,
+  Image,
 } from 'react-native';
 
 const DO = [
@@ -19,19 +23,19 @@ const DO = [
   'Putztücher',
   'Rasierklingen',
   'Speisereste',
-  'usw.'
 ];
 
 const DONT = [
-  'Alles was irgendwie wiederverwertet werden kann, gehört nicht in den Restmüll!'
+  'Alles, was recycelt werden kann, gehört nicht in den Restmüll!'
 ];
 
 
 export default class GraueTonne extends Component {
   render() {
     return (
-      <View style={{backgroundColor: '#fbfbfb', flex:1, padding: 0}}>
-          <HeadlineText mainColor={true} center={true}>Huhu</HeadlineText>
+      <View style={styles.container}>
+          <HeadlineText mainColor={true} center={true}>Graue Tonne</HeadlineText>
+          <AnimImg tonne='grau' />
           <DoDont do={DO} dont={DONT}/>
       </View>
     );
@@ -40,8 +44,5 @@ export default class GraueTonne extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
   },
 });

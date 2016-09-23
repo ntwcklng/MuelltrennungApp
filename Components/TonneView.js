@@ -3,6 +3,9 @@ import GraueTonne from './Tonnen/Grau.js';
 import GelbeTonne from './Tonnen/Gelb.js';
 import BlaueTonne from './Tonnen/Blau.js';
 import BioTonne from './Tonnen/Bio.js';
+import Altglas from './Tonnen/Altglas.js';
+import Sondermuell from './Tonnen/Sondermuell.js';
+import Sperrmuell from './Tonnen/Sperrmuell.js';
 import HeadlineText from './HeadlineText.js';
 import {
   Text,
@@ -29,10 +32,22 @@ export default class TonneView extends Component {
       case 'bio':
         Tonne = (<BioTonne />);
         break;
+      case 'altglas':
+        Tonne = (<Altglas />);
+        break;
+      case 'sperrmüll':
+        Tonne = (<Sperrmuell />);
+        break;
+      case 'sondermüll':
+        Tonne = (<Sondermuell />);
+        break;
+      case 'elektro':
+        Tonne = (<Elektro />);
+        break;
     }
     return (
       <View style={styles.container}>
-        <ScrollView style={{padding: 10}}>
+        <ScrollView style={{padding: 20}}>
           {Tonne}
         </ScrollView>
       </View>
@@ -42,7 +57,5 @@ export default class TonneView extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 0,
-    backgroundColor: '#fbfbfb',
   },
 });

@@ -56,7 +56,7 @@ const styles = StyleSheet.create({
   },
   dodontText: {
     color: '#585858',
-    fontSize: 16,
+    fontSize: 18,
   },
   dodontView: {
     flex: 1,
@@ -70,6 +70,5 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
-    backgroundColor: '#fbfbfb',
   },
 });

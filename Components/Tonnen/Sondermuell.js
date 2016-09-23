@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 import HeadlineText from '../HeadlineText.js';
 import DoDont from '../DoDont.js';
+import GlobalStyle from '../GlobalStyle.js';
+
 import {
   Text,
   StyleSheet,
   TouchableHighlight,
   ScrollView,
-  View
+  View,
+  Image,
 } from 'react-native';
 
 const DO = [
@@ -46,7 +49,5 @@ export default class Sondermuell extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 20,
-    backgroundColor: '#F5FCFF',
   },
 });
