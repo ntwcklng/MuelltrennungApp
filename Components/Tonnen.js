@@ -27,7 +27,7 @@ const Tonnen = [
     name: 'altglas',
     displayName: 'Altglas',
     component: './Tonnen/Altglas.js',
-    desc: 'Wurst- und Gurkengläser, Weinflaschen, leere Flaschen'
+    desc: 'Wurst- und Gurkengläser, Weinflaschen,\n leere Flaschen'
   },
   {
     name: 'sperrmüll',
