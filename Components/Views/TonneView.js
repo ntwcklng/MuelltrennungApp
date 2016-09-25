@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
-import GraueTonne from '../Tonnen/Grau.js';
-import GelbeTonne from '../Tonnen/Gelb.js';
-import BlaueTonne from '../Tonnen/Blau.js';
-import BioTonne from '../Tonnen/Bio.js';
-import Altglas from '../Tonnen/Altglas.js';
-import Sondermuell from '../Tonnen/Sondermuell.js';
-import Sperrmuell from '../Tonnen/Sperrmuell.js';
-import HeadlineText from '../HeadlineText.js';
+import GraueTonne from '../Tonnen/Grau';
+import GelbeTonne from '../Tonnen/Gelb';
+import BlaueTonne from '../Tonnen/Blau';
+import BioTonne from '../Tonnen/Bio';
+import Altglas from '../Tonnen/Altglas';
+import Sondermuell from '../Tonnen/Sondermuell';
+import Sperrmuell from '../Tonnen/Sperrmuell';
+import HeadlineText from '../HeadlineText';
 import {
   Text,
   StyleSheet,
   TouchableHighlight,
   ScrollView,
-  View
+  View,
 } from 'react-native';
 
 

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import HeadlineText from '../HeadlineText.js';
+import HeadlineText from '../HeadlineText';
 import {
   Text,
   View,

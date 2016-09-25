@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
-import TonneView from './TonneView.js';
-import Tonnen from '../Tonnen.js';
-import HeadlineText from '../HeadlineText.js';
+import TonneView from './TonneView';
+import Tonnen from '../Tonnen';
+import HeadlineText from '../HeadlineText';
 import {
   Text,
   StyleSheet,
@@ -23,6 +23,7 @@ export default class MainView extends Component {
   _onPressBtn(tonne) {
     const title = tonne.toUpperCase();
     this.props.navigator.push({
+      id: 'tonneview',
       component: TonneView,
       passProps: { tonne }
     })
