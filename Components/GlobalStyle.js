@@ -4,6 +4,10 @@ import {
 } from 'react-native';
 
 export default GlobalStyle = StyleSheet.create({
+  containerTonne: {
+    flex: 1,
+    marginBottom: 30,
+  },
   imgPfeil: {
     width: 50,
     margin: -100,

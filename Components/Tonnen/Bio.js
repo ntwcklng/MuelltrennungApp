@@ -40,7 +40,7 @@ const DONT = [
 export default class BioTonne extends Component {
   render() {
     return (
-      <View style={styles.container}>
+      <View style={GlobalStyle.containerTonne}>
         <HeadlineText mainColor={true} center={true}>Bio Tonne</HeadlineText>
         <AnimImg tonne='bio' />
         <DoDont do={DO} dont={DONT}/>
@@ -48,8 +48,3 @@ export default class BioTonne extends Component {
     );
   }
 }
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});

@@ -39,7 +39,7 @@ const DONT = [
 export default class BlaueTonne extends Component {
   render() {
     return (
-      <View style={styles.container}>
+      <View style={GlobalStyle.containerTonne}>
         <HeadlineText mainColor={true} center={true}>Blaue Tonne</HeadlineText>
         <AnimImg tonne='blau' />
         <DoDont do={DO} dont={DONT}/>
@@ -47,8 +47,3 @@ export default class BlaueTonne extends Component {
     );
   }
 }
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});

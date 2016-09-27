@@ -37,7 +37,7 @@ const DONT = [
 export default class Altglas extends Component {
   render() {
     return (
-      <View style={styles.container}>
+      <View style={GlobalStyle.containerTonne}>
         <HeadlineText mainColor={true} center={true}>Altglas</HeadlineText>
         <AnimImg tonne='altglas' />
         <DoDont do={DO} dont={DONT}/>
@@ -45,8 +45,3 @@ export default class Altglas extends Component {
     );
   }
 }
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});

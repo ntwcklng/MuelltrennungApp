@@ -18,7 +18,7 @@ class MuelltrennungApp extends Component {
   _showHelp() {
     this.refs.nav.push({
       component: Hilfe,
-      title: '?'
+      title: ''
     })
   }
   render() {

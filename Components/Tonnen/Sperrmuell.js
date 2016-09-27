@@ -38,7 +38,7 @@ const DONT = [
 export default class Sperrmuell extends Component {
   render() {
     return (
-      <View style={styles.container}>
+      <View style={GlobalStyle.containerTonne}>
         <HeadlineText mainColor={true} center={true}>Sperrmüll</HeadlineText>
         <AnimImg tonne='sperrmüll' />
         <Text style={GlobalStyle.infoText}>Informiere dich bei deiner Stadt wo du Sperrmüll entsorgen bzw. anmelden kannst.</Text>
@@ -47,8 +47,3 @@ export default class Sperrmuell extends Component {
     );
   }
 }
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});

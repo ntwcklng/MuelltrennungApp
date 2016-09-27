@@ -19,6 +19,8 @@ import Hilfe from './Components/Views/Hilfe';
 import MainView from './Components/Views/MainView';
 import TonneView from './Components/Views/TonneView';
 
+import Icon from 'react-native-vector-icons/FontAwesome';
+
 class MuelltrennungApp extends Component {
   _showHelp() {
     this.refs.nav.push({
@@ -58,8 +60,7 @@ class MuelltrennungApp extends Component {
         const previousRoute = navState.routeStack[index - 1];
         return (
           <TouchableOpacity onPress={() => navigator.pop()}>
-            <Image source={require('./Components/Images/BackButton.png')} resizeMode='contain' style={styles.backButton}/>
-            <Text>Zurück</Text>
+            <Icon style={styles.backButton} name="chevron-left" size={25} color='#02B875' />
           </TouchableOpacity>
         );
       },
@@ -95,8 +96,6 @@ class MuelltrennungApp extends Component {
 }
 const styles = StyleSheet.create({
   backButton: {
-    width: 35,
-    height: 35,
     margin: 10,
   },
 });

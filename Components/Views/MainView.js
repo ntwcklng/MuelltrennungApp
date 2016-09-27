@@ -1,11 +1,12 @@
 import React, { Component, PropTypes } from 'react';
 import TonneView from './TonneView';
-import Tonnen from '../Tonnen';
+import TonnenItems from '../TonnenItems';
 import HeadlineText from '../HeadlineText';
+import Icon from 'react-native-vector-icons/FontAwesome';
 import {
   Text,
   StyleSheet,
-  TouchableHighlight,
+  TouchableOpacity,
   ScrollView,
   View,
   Image
@@ -17,67 +18,14 @@ export default class MainView extends Component {
     navigator: PropTypes.object.isRequired,
   }
   constructor(props, context) {
-    super(props, context);
-    this._onPressBtn = this._onPressBtn.bind(this);
-  }
-  _onPressBtn(tonne) {
-    const title = tonne.toUpperCase();
-    this.props.navigator.push({
-      id: 'tonneview',
-      component: TonneView,
-      passProps: { tonne }
-    })
+    super();
   }
   render() {
-    const TonnenItems = Tonnen.map((tonne) => {
-      let MuellImg;
-      switch(tonne.name) {
-        case 'blau':
-          MuellImg = require('../Images/Blaue.png');
-          break;
-        case 'grau':
-          MuellImg = require('../Images/Graue.png');
-          break;
-        case 'gelb':
-          MuellImg = require('../Images/Gelbe.png');
-          break;
-        case 'bio':
-          MuellImg = require('../Images/Bio.png');
-          break;
-        case 'altglas':
-          MuellImg = require('../Images/Altglas.png');
-          break;
-        case 'sperrmüll':
-          MuellImg = require('../Images/Sperrmuell.png');
-          break;
-        case 'sondermüll':
-          MuellImg = require('../Images/Sondermuell.png');
-          break;
-        case 'elektro':
-          MuellImg = require('../Images/Elektro.png');
-          break;
-      };
-      return (
-        <TouchableHighlight
-          key={tonne.name}
-          onPress={() => this._onPressBtn(tonne.name)}
-          style={styles.TonnenButton}
-          underlayColor='#02B875'>
-          <View>
-          <Image
-            source={MuellImg}
-            style={styles.ImgBtn}
-          />
-          <Text style={styles.TonnenDesc}>{tonne.desc}</Text>
-          </View>
-        </TouchableHighlight>
-      )
-    })
     return (
       <View style={styles.container}>
         <ScrollView>
           <HeadlineText center={true} mainColor={true}>Was möchtest du entsorgen?</HeadlineText>
-          {TonnenItems}
+          <TonnenItems navigator={this.props.navigator}/>
         </ScrollView>
       </View>
     );
@@ -99,6 +47,8 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     padding: 10,
     flex:1,
+    alignItems: 'stretch',
+    justifyContent: 'space-around'
   },
   container: {
     flex: 1,

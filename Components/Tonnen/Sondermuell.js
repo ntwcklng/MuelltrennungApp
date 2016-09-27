@@ -36,7 +36,7 @@ const DONT = [
 export default class Sondermuell extends Component {
   render() {
     return (
-      <View style={styles.container}>
+      <View style={GlobalStyle.containerTonne}>
         <HeadlineText mainColor={true} center={true}>Sondermüll</HeadlineText>
         <AnimImg tonne='sondermüll' />
         <Text style={GlobalStyle.infoText}>Informiere dich bei deiner Stadt wo du Sondermüll entsorgen bzw. anmelden kannst.</Text>
@@ -45,8 +45,3 @@ export default class Sondermuell extends Component {
     );
   }
 }
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
