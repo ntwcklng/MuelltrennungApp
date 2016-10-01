@@ -7,6 +7,7 @@ import Altglas from '../Tonnen/Altglas';
 import Sondermuell from '../Tonnen/Sondermuell';
 import Sperrmuell from '../Tonnen/Sperrmuell';
 import HeadlineText from '../HeadlineText';
+import GlobalStyle from '../GlobalStyle';
 import {
   Text,
   StyleSheet,
@@ -48,6 +49,11 @@ export default class TonneView extends Component {
     return (
       <View style={styles.container}>
         <ScrollView style={{padding: 20}}>
+          {this.props.searchText &&
+            <Text style={GlobalStyle.normalText}>
+            Du hast nach <Text style={{fontWeight: 'bold'}}>{this.props.searchText}</Text> gesucht. Das gehört wahrscheinlich in die:
+            </Text>
+          }
           {Tonne}
         </ScrollView>
       </View>

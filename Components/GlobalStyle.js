@@ -4,6 +4,11 @@ import {
 } from 'react-native';
 
 export default GlobalStyle = StyleSheet.create({
+  normalText: {
+    color: '#585858',
+    fontFamily: 'System',
+    fontSize: 16,
+  },
   containerTonne: {
     flex: 1,
     marginBottom: 30,

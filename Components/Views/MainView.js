@@ -1,8 +1,10 @@
 import React, { Component, PropTypes } from 'react';
 import TonneView from './TonneView';
+import SearchView from './SearchView';
 import TonnenItems from '../TonnenItems';
 import HeadlineText from '../HeadlineText';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import SearchBar from '../SearchBar.js';
 import {
   Text,
   StyleSheet,
@@ -18,12 +20,26 @@ export default class MainView extends Component {
     navigator: PropTypes.object.isRequired,
   }
   constructor(props, context) {
-    super();
+    super(props);
+    this._onSearch = this._onSearch.bind(this);
+  }
+  _onSearch(query, result) {
+    console.log(query, result);
+    this.props.navigator.push({
+      id: 'tonneview',
+      component: TonneView,
+      passProps: { tonne: result[0], searchText: query }
+    })
   }
   render() {
     return (
       <View style={styles.container}>
         <ScrollView>
+          <SearchBar
+            ref='SearchBar'
+            placeholder='Ich suche...'
+            onSearchButtonPress={(query, result) => this._onSearch(query, result)}
+          />
           <HeadlineText center={true} mainColor={true}>Was möchtest du entsorgen?</HeadlineText>
           <TonnenItems navigator={this.props.navigator}/>
         </ScrollView>

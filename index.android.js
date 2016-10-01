@@ -18,6 +18,7 @@ import {
 import Hilfe from './Components/Views/Hilfe';
 import MainView from './Components/Views/MainView';
 import TonneView from './Components/Views/TonneView';
+import SearchView from './Components/Views/SearchView';
 
 import Icon from 'react-native-vector-icons/FontAwesome';
 
@@ -43,6 +44,8 @@ class MuelltrennungApp extends Component {
         return (<Hilfe navigator={navigator} />)
       case 'tonneview':
         return (<TonneView tonne={route.passProps.tonne} navigator={navigator} />)
+      case 'search':
+        return (<SearchView query={route.passProps.query} navigator={navigator} />)
     }
   }
   render() {
