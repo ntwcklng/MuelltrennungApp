@@ -27,9 +27,9 @@ class MuelltrennungApp extends Component {
       ref='nav'
         style={{flex: 1}}
         barTintColor='#02B875'
-        tintColor='#f6f6f6'
+        tintColor='#f2f2f2'
         titleTextColor='#FFFFFF'
-        itemWrapperStyle={{backgroundColor: '#fbfbfb'}}
+        itemWrapperStyle={{backgroundColor: '#f6f6f6'}}
         initialRoute={{
           component: MainView,
           title: 'Mülltrennung',

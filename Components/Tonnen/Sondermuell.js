@@ -40,6 +40,7 @@ export default class Sondermuell extends Component {
         <HeadlineText mainColor={true} center={true}>Sondermüll</HeadlineText>
         <AnimImg tonne='sondermüll' />
         <Text style={GlobalStyle.infoText}>Informiere dich bei deiner Stadt wo du Sondermüll entsorgen bzw. anmelden kannst.</Text>
+        <Text style={GlobalStyle.infoText}>Batterien und Leuchtstoffröhren kannst du oftmals im Baumarkt/Supermarkt in dafür vorgesehene Boxen entsorgen. </Text>
         <DoDont do={DO} dont={DONT}/>
       </View>
     );

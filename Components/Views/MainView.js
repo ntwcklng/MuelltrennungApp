@@ -11,7 +11,8 @@ import {
   TouchableOpacity,
   ScrollView,
   View,
-  Image
+  Image,
+  TextInput
 } from 'react-native';
 
 
@@ -21,6 +22,9 @@ export default class MainView extends Component {
   }
   constructor(props, context) {
     super(props);
+    this.state = {
+      showToast: false,
+    };
     this._onSearch = this._onSearch.bind(this);
   }
   _onSearch(query, result) {
@@ -34,13 +38,18 @@ export default class MainView extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <ScrollView>
+        <ScrollView keyboardShouldPersistTaps={false}>
+          <HeadlineText center={true} mainColor={true}>Was möchtest du entsorgen?</HeadlineText>
+          <View style={styles.descText}>
+            <Text style={GlobalStyle.normalText}>Gib in das Suchfeld ein was du entsorgen möchtest ...</Text>
+          </View>
           <SearchBar
-            ref='SearchBar'
-            placeholder='Ich suche...'
+            placeholder='z.B. Folie, Putztücher, Milchtüte, ...'
             onSearchButtonPress={(query, result) => this._onSearch(query, result)}
           />
-          <HeadlineText center={true} mainColor={true}>Was möchtest du entsorgen?</HeadlineText>
+          <View style={styles.descText}>
+            <Text style={GlobalStyle.normalText}>... oder stöbere in den einzelnen Kategorien</Text>
+          </View>
           <TonnenItems navigator={this.props.navigator}/>
         </ScrollView>
       </View>
@@ -48,6 +57,9 @@ export default class MainView extends Component {
   }
 }
 const styles = StyleSheet.create({
+  descText: {
+    margin: 15,
+  },
   TonnenDesc: {
     marginTop: 15,
     color: '#585858',

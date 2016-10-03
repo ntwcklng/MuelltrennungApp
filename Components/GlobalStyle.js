@@ -8,6 +8,7 @@ export default GlobalStyle = StyleSheet.create({
     color: '#585858',
     fontFamily: 'System',
     fontSize: 16,
+    marginTop: 15,
   },
   containerTonne: {
     flex: 1,
@@ -25,6 +26,7 @@ export default GlobalStyle = StyleSheet.create({
     marginBottom: 60,
   },
   infoText: {
+    color: '#585858',
     fontSize: 16,
     margin: 20,
   },

@@ -7,6 +7,8 @@ import {
   Image
 } from 'react-native';
 
+import Icon from 'react-native-vector-icons/FontAwesome';
+
 
 export default class DoDont extends Component {
 
@@ -17,7 +19,8 @@ export default class DoDont extends Component {
     const renderDO = this.props.do.map((i) => {
       return (<View key={i} style={styles.dodontView}>
         <View style={styles.imgView}>
-          <Image style={styles.img} source={require('./Images/DO.png')} />
+           {/*<Image style={styles.img} source={require('./Images/DO.png')} />*/}
+           <Icon name='check' color='limegreen' size={25} />
         </View>
         <View style={styles.wrapper}>
           <Text style={styles.dodontText}>{i}</Text>
@@ -27,7 +30,8 @@ export default class DoDont extends Component {
     const renderDONT = this.props.dont.map((i) => {
       return (<View key={i} style={styles.dodontView}>
         <View style={styles.imgView}>
-          <Image style={styles.img} source={require('./Images/DONT.png')} />
+          {/*<Image style={styles.img} source={require('./Images/DONT.png')} />*/}
+          <Icon name='times' color='red' size={24} />
         </View>
         <View style={styles.wrapper}>
           <Text style={styles.dodontText}>{i}</Text>
@@ -66,6 +70,7 @@ const styles = StyleSheet.create({
   },
   imgView: {
     flex: .1,
+    alignSelf: 'center',
     marginRight: 20,
   },
   container: {

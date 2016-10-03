@@ -51,7 +51,7 @@ export default class TonneView extends Component {
         <ScrollView style={{padding: 20}}>
           {this.props.searchText &&
             <Text style={GlobalStyle.normalText}>
-            Du hast nach <Text style={{fontWeight: 'bold'}}>{this.props.searchText}</Text> gesucht. Das gehört wahrscheinlich in die:
+            Du hast nach <Text style={{fontWeight: 'bold'}}>{this.props.searchText}</Text> gesucht. Wahrscheinlich gehört das hier rein.
             </Text>
           }
           {Tonne}
