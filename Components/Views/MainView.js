@@ -25,15 +25,6 @@ export default class MainView extends Component {
     this.state = {
       showToast: false,
     };
-    this._onSearch = this._onSearch.bind(this);
-  }
-  _onSearch(query, result) {
-    console.log(query, result);
-    this.props.navigator.push({
-      id: 'tonneview',
-      component: TonneView,
-      passProps: { tonne: result[0], searchText: query }
-    })
   }
   render() {
     return (
@@ -45,7 +36,7 @@ export default class MainView extends Component {
           </View>
           <SearchBar
             placeholder='z.B. Folie, Putztücher, Milchtüte, ...'
-            onSearchButtonPress={(query, result) => this._onSearch(query, result)}
+            navigator={this.props.navigator}
           />
           <View style={styles.descText}>
             <Text style={GlobalStyle.normalText}>... oder stöbere in den einzelnen Kategorien</Text>
