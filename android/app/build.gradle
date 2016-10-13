@@ -92,8 +92,8 @@ android {
         applicationId "com.muelltrennungapp"
         minSdkVersion 16
         targetSdkVersion 22
-        versionCode 5
-        versionName "1.3"
+        versionCode 8
+        versionName "1.5"
         ndk {
             abiFilters "armeabi-v7a", "x86"
         }

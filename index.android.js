@@ -12,22 +12,18 @@ import {
   Text,
   TouchableOpacity,
   BackAndroid,
-  Image
+  Image,
+  View
 } from 'react-native';
 
 import Hilfe from './Components/Views/Hilfe';
 import MainView from './Components/Views/MainView';
 import TonneView from './Components/Views/TonneView';
+import SearchView from './Components/Views/SearchView';
 
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 class MuelltrennungApp extends Component {
-  _showHelp() {
-    this.refs.nav.push({
-      component: Hilfe,
-      title: '?'
-    })
-  }
   navigationRenderScene(route, navigator) {
     _navigator = navigator;
     BackAndroid.addEventListener('hardwareBackPress', () => {
@@ -39,17 +35,14 @@ class MuelltrennungApp extends Component {
     switch (route.id) {
       case 'init':
         return (<MainView navigator={navigator} />);
-      case 'help':
-        return (<Hilfe navigator={navigator} />)
       case 'tonneview':
-        return (<TonneView tonne={route.passProps.tonne} navigator={navigator} />)
+        return (<TonneView tonne={route.passProps.tonne} searchText={route.passProps.searchText} navigator={navigator} />);
     }
   }
   render() {
     const routes = [
       {id: 'init', index: 0},
-      {id: 'help', index: 1},
-      {id: 'tonneview', index: 2},
+      {id: 'tonneview', index: 1},
     ];
 
     const NavigationBarRouteMapper = {
@@ -65,9 +58,7 @@ class MuelltrennungApp extends Component {
         );
       },
       RightButton: (route, navigator, index, navState) => {
-        if (route.rightElement) {
-          return route.rightElement
-        }
+        return null;
       },
       Title: (route, navigator, index, navState) => {
         return null;
@@ -89,7 +80,8 @@ class MuelltrennungApp extends Component {
         barTintColor='#02B875'
         tintColor='#f6f6f6'
         titleTextColor='#FFFFFF'
-        itemWrapperStyle={{backgroundColor: '#fbfbfb'}}
+        itemWrapperStyle={{backgroundColor: '#ececec'}}
+        sceneStyle={{marginTop: 20}}
         />
     );
   }
