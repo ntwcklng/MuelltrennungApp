@@ -9,6 +9,7 @@ import {
   View,
   StyleSheet,
   Alert,
+  TouchableOpacity,
 } from 'react-native';
 
 
@@ -36,13 +37,14 @@ export default class SearchBar extends Component {
   }
   _onSubmit() {
     const { query } = this.state;
-    const searchResult = linkSearch.search(query);
-    if (query.toLowerCase() === 'homo') return Alert.alert('Meintest du vielleicht "Mathias Schürmann"?');
+    if (query === '') {
+      return Alert.alert('Gib zuerst was ins Suchfeld ein');
+    }
 
+    const searchResult = linkSearch.search(query);
     if (searchResult.length === 0 || (query === '' || searchResult.length > 2)) {
       return Alert.alert('Leider konnten wir nichts finden');
     } else {
-      console.log('PUSHED TO TONNEVIEW');
       this.props.navigator.push({
         id: 'tonneview',
         component: TonneView,
@@ -54,7 +56,6 @@ export default class SearchBar extends Component {
     const { placeholder } = this.props;
     return (
       <View style={styles.container}>
-        <Icon name='search' size={20} color='#585858' style={{marginHorizontal: 15, marginVertical: 5,}}/>
         <TextInput
           ref='searchBar'
           style={styles.searcher}
@@ -66,13 +67,15 @@ export default class SearchBar extends Component {
           blurOnSubmit={true}
           autoFocus={false}
         />
+        <TouchableOpacity onPress={this._onSubmit}>
+          <Icon name='search' size={20} color='#585858' style={{marginHorizontal: 15, marginVertical: 5,}}/>
+        </TouchableOpacity>
       </View>
     )
   }
 }
 const styles = StyleSheet.create({
   container: {
-    // backgroundColor: '#fff',
     marginVertical: 10,
     flexDirection: 'row',
   },
@@ -86,5 +89,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: 15,
     color: '#585858',
     fontSize: 14,
+    marginLeft: 10,
   },
 });
