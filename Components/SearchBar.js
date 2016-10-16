@@ -67,14 +67,21 @@ export default class SearchBar extends Component {
           blurOnSubmit={true}
           autoFocus={false}
         />
-        <TouchableOpacity onPress={this._onSubmit}>
-          <Icon name='search' size={20} color='#585858' style={{marginHorizontal: 15, marginVertical: 5,}}/>
+        <TouchableOpacity onPress={this._onSubmit} style={styles.searchButton}>
+          <Icon name='search' size={20} color='#fff' />
         </TouchableOpacity>
       </View>
     )
   }
 }
 const styles = StyleSheet.create({
+  searchButton: {
+    paddingHorizontal: 15,
+    paddingVertical: 5,
+    borderRadius: 5,
+    backgroundColor: '#02B875',
+    marginHorizontal: 7,
+  },
   container: {
     marginVertical: 10,
     flexDirection: 'row',
