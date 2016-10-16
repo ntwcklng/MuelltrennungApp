@@ -133,6 +133,12 @@ async@^1.4.2:
   version "1.5.2"
   resolved "https://registry.yarnpkg.com/async/-/async-1.5.2.tgz#ec6a61ae56480c0c3cb241c95618e20892f9672a"
 
+async@^2.0.1:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/async/-/async-2.1.1.tgz#e11b6d10043f2254efb61a21163d840ccddb8d28"
+  dependencies:
+    lodash "^4.14.0"
+
 async@~0.2.6:
   version "0.2.10"
   resolved "https://registry.yarnpkg.com/async/-/async-0.2.10.tgz#b6bbe0b0674b9d719708ca38de8c237cb526c3d1"
@@ -710,7 +716,11 @@ base62@^1.1.0:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/base62/-/base62-1.1.1.tgz#974e82c11bd5e00816b508a7ed9c7b9086c9db6b"
 
-base64-js@^0.0.8, base64-js@0.0.8:
+base64-js@^1.0.2, base64-js@^1.1.2:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/base64-js/-/base64-js-1.2.0.tgz#a39992d723584811982be5e290bb6a53d86700f1"
+
+base64-js@0.0.8:
   version "0.0.8"
   resolved "https://registry.yarnpkg.com/base64-js/-/base64-js-0.0.8.tgz#1101e9544f4a76b1bc3b26d452ca96d7a35e7978"
 
@@ -820,6 +830,13 @@ buffer-to-vinyl@^1.0.0:
     readable-stream "^2.0.2"
     uuid "^2.0.1"
     vinyl "^1.0.0"
+
+buffer@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/buffer/-/buffer-5.0.0.tgz#a65f428104a402563108d06b9c85a2f0c9713652"
+  dependencies:
+    base64-js "^1.0.2"
+    ieee754 "^1.1.4"
 
 builtin-modules@^1.0.0:
   version "1.1.1"
@@ -1771,6 +1788,10 @@ github-username@^2.0.0:
     gh-got "^2.2.0"
     meow "^3.5.0"
 
+glamor@^2.15.5:
+  version "2.16.2"
+  resolved "https://registry.yarnpkg.com/glamor/-/glamor-2.16.2.tgz#6c3193866881566197be3d981966f33e46b30160"
+
 glob-base@^0.3.0:
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/glob-base/-/glob-base-0.3.0.tgz#dbb164f6221b1c0b1ccf82aea328b497df0ea3c4"
@@ -1967,6 +1988,10 @@ has-ansi@^2.0.0:
   dependencies:
     ansi-regex "^2.0.0"
 
+has-flag@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/has-flag/-/has-flag-1.0.0.tgz#9d9e793165ce017a00f00418c43f942a7b1d11fa"
+
 has-gulplog@^0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/has-gulplog/-/has-gulplog-0.1.0.tgz#6414c82913697da51590397dafb12f22967811ce"
@@ -2023,6 +2048,10 @@ iconv-lite@^0.4.5, iconv-lite@~0.4.13, iconv-lite@0.4.13:
 iconv-lite@0.4.11:
   version "0.4.11"
   resolved "https://registry.yarnpkg.com/iconv-lite/-/iconv-lite-0.4.11.tgz#2ecb42fd294744922209a2e7c404dac8793d8ade"
+
+ieee754@^1.1.4:
+  version "1.1.8"
+  resolved "https://registry.yarnpkg.com/ieee754/-/ieee754-1.1.8.tgz#be33d40ac10ef1926701f6f08a2d86fbfd1ad3e4"
 
 image-size@^0.3.5:
   version "0.3.5"
@@ -2288,6 +2317,10 @@ joi@^6.6.1:
     moment "2.x.x"
     topo "1.x.x"
 
+js-base64@^2.1.9:
+  version "2.1.9"
+  resolved "https://registry.yarnpkg.com/js-base64/-/js-base64-2.1.9.tgz#f0e80ae039a4bd654b5f281fc93f04a914a7fcce"
+
 js-tokens@^1.0.1:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/js-tokens/-/js-tokens-1.0.3.tgz#14e56eb68c8f1a92c43d59f5014ec29dc20f2ae1"
@@ -2499,7 +2532,7 @@ lodash@^3.1.0, lodash@^3.10.1, lodash@^3.2.0, lodash@^3.3.1, lodash@^3.5.0, loda
   version "3.10.1"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-3.10.1.tgz#5bf45e8e49ba4189e17d482789dfd15bd140b7b6"
 
-lodash@^4.0.0, lodash@^4.2.0, lodash@^4.3.0, lodash@^4.6.1:
+lodash@^4.0.0, lodash@^4.14.0, lodash@^4.15.0, lodash@^4.2.0, lodash@^4.3.0, lodash@^4.6.1:
   version "4.16.4"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.16.4.tgz#01ce306b9bad1319f2a5528674f88297aeb70127"
 
@@ -3104,12 +3137,13 @@ react-native-vector-icons@^2.1.0:
     lodash "^4.0.0"
     yargs "^4.7.0"
 
-react-native@0.34.0:
-  version "0.34.0"
-  resolved "https://registry.yarnpkg.com/react-native/-/react-native-0.34.0.tgz#a6320983db7b14eed6add34c00780a470d968210"
+react-native@0.35.0:
+  version "0.35.0"
+  resolved "https://registry.yarnpkg.com/react-native/-/react-native-0.35.0.tgz#59a53e80109a728a7f6c7c9f0f0899c8b14c13b2"
   dependencies:
     absolute-path "^0.0.0"
     art "^0.10.0"
+    async "^2.0.1"
     babel-core "^6.10.4"
     babel-plugin-external-helpers "^6.8.0"
     babel-plugin-syntax-trailing-function-commas "^6.5.0"
@@ -3122,7 +3156,7 @@ react-native@0.34.0:
     babel-register "^6.6.0"
     babel-types "^6.6.4"
     babylon "^6.8.2"
-    base64-js "^0.0.8"
+    base64-js "^1.1.2"
     bser "^1.0.2"
     chalk "^1.1.1"
     commander "^2.9.0"
@@ -3195,7 +3229,7 @@ react-transform-hmr@^1.0.4:
     global "^4.3.0"
     react-proxy "^1.1.7"
 
-react@15.3.2:
+react@^15.3.2, react@15.3.2:
   version "15.3.2"
   resolved "https://registry.yarnpkg.com/react/-/react-15.3.2.tgz#a7bccd2fee8af126b0317e222c28d1d54528d09e"
   dependencies:
@@ -3575,7 +3609,7 @@ source-map@^0.4.2, source-map@^0.4.4:
   dependencies:
     amdefine ">=0.0.4"
 
-source-map@^0.5.0, source-map@^0.5.3, source-map@~0.5.0, source-map@~0.5.1, source-map@0.X:
+source-map@^0.5.0, source-map@^0.5.3, source-map@^0.5.6, source-map@~0.5.0, source-map@~0.5.1, source-map@0.X:
   version "0.5.6"
   resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.5.6.tgz#75ce38f52bf0733c5a7f0c118d81334a2bb5f412"
 
@@ -3723,6 +3757,19 @@ strip-outer@^1.0.0:
   dependencies:
     escape-string-regexp "^1.0.2"
 
+styled-components:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/styled-components/-/styled-components-1.0.0.tgz#32d9364c97238932911c0238da26f0599bbe6ecd"
+  dependencies:
+    buffer "^5.0.0"
+    fbjs "^0.8.4"
+    glamor "^2.15.5"
+    js-base64 "^2.1.9"
+    lodash "^4.15.0"
+    react "^15.3.2"
+    source-map "^0.5.6"
+    supports-color "^3.1.2"
+
 subarg@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/subarg/-/subarg-1.0.0.tgz#f62cf17581e996b48fc965699f54c06ae268b8d2"
@@ -3738,6 +3785,12 @@ sum-up@^1.0.1:
 supports-color@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/supports-color/-/supports-color-2.0.0.tgz#535d045ce6b6363fa40117084629995e9df324c7"
+
+supports-color@^3.1.2:
+  version "3.1.2"
+  resolved "https://registry.yarnpkg.com/supports-color/-/supports-color-3.1.2.tgz#72a262894d9d408b956ca05ff37b2ed8a6e2a2d5"
+  dependencies:
+    has-flag "^1.0.0"
 
 tar-stream@^1.1.1:
   version "1.5.2"

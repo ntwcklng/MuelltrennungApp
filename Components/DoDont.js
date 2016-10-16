@@ -9,6 +9,8 @@ import {
 
 import Icon from 'react-native-vector-icons/FontAwesome';
 
+import * as CUSTOMCOMP from './Styled';
+
 
 export default class DoDont extends Component {
 
@@ -23,6 +25,9 @@ export default class DoDont extends Component {
            <Icon name='check' color='limegreen' size={25} />
         </View>
         <View style={styles.wrapper}>
+          <CUSTOMCOMP.normalTextBlue>
+            HALLO BLAU????
+          </CUSTOMCOMP.normalTextBlue>
           <Text style={styles.dodontText}>{i}</Text>
         </View>
         </View>);
