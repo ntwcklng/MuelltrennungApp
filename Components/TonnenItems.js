@@ -3,6 +3,7 @@ import TonneView from './Views/TonneView';
 import Tonnen from './Tonnen';
 import HeadlineText from './HeadlineText';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import * as Animatable from 'react-native-animatable';
 import {
   Text,
   StyleSheet,
@@ -30,7 +31,9 @@ export default class TonnenItems extends Component {
     })
   }
   render() {
-    const TonnenItems = Tonnen.map((tonne) => {
+    let showDelay = 50;
+    const TonnenItems = Tonnen.map((tonne, i) => {
+      showDelay = showDelay + 50;
       let MuellImg;
       switch(tonne.name) {
         case 'blau':
@@ -59,8 +62,8 @@ export default class TonnenItems extends Component {
           break;
       };
       return (
-        <TouchableOpacity
-          key={tonne.name}
+        <Animatable.View delay={showDelay} animation='fadeInUp' easing='ease-out' duration={400} key={tonne.name}><TouchableOpacity
+
           onPress={() => this._onPressBtn(tonne.name)}
           style={styles.TonnenButton}>
           <View>
@@ -70,11 +73,11 @@ export default class TonnenItems extends Component {
                   style={styles.ImgBtn}
                 />
                 <Icon name="chevron-right" size={30} color='#02B875' />
-
             </View>
           <Text style={styles.TonnenDesc}>{tonne.desc}</Text>
           </View>
         </TouchableOpacity>
+        </Animatable.View>
       )
     })
     return <View>{TonnenItems}</View>;
