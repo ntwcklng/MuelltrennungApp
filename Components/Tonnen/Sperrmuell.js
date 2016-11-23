@@ -4,21 +4,14 @@ import DoDont from '../DoDont.js';
 import AnimImg from '../AnimImg.js';
 import GlobalStyle from '../GlobalStyle.js';
 
-import {
-  Text,
-  StyleSheet,
-  TouchableHighlight,
-  ScrollView,
-  View,
-  Image,
-} from 'react-native';
+import { View } from 'react-native';
 
 const DO = [
   'Möbel',
   'Schränke',
   'Regale',
   'Matratzen',
-  'Koffer',
+  'Koffer'
 ];
 
 const DONT = [
@@ -31,18 +24,21 @@ const DONT = [
   'Reifen',
   'Restmüll',
   'Rasenmäher',
-  'Vollglastüren',
+  'Vollglastüren'
 ];
 
-
 export default class Sperrmuell extends Component {
-  render() {
+  render () {
     return (
       <View style={GlobalStyle.containerTonne}>
-        <HeadlineText mainColor={true} center={true}>Sperrmüll</HeadlineText>
+        <HeadlineText mainColor center>
+          Sperrmüll
+        </HeadlineText>
         <AnimImg tonne='sperrmüll' />
-        <Text style={GlobalStyle.infoText}>Informiere dich bei deiner Stadt wo du Sperrmüll entsorgen bzw. anmelden kannst.</Text>
-        <DoDont do={DO} dont={DONT}/>
+        <Text style={GlobalStyle.infoText}>
+          Informiere dich bei deiner Stadt wo du Sperrmüll entsorgen bzw. anmelden kannst.
+        </Text>
+        <DoDont do={DO} dont={DONT} />
       </View>
     );
   }

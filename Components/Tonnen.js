@@ -40,6 +40,6 @@ const Tonnen = [
     displayName: 'Sondermüll',
     component: './Tonnen/Sondermuell.js',
     desc: 'Batterien, Kork, Tintenpatronen, Farben, Lacke, usw.'
-  },
-]
+  }
+];
 module.exports = Tonnen;

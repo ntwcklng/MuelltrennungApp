@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import TonneView from './Views/TonneView';
 import Fuse from 'fuse.js';
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -9,9 +9,8 @@ import {
   View,
   StyleSheet,
   Alert,
-  TouchableOpacity,
+  TouchableOpacity
 } from 'react-native';
-
 
 const searchOptions = {
   keys: ['items'],
@@ -20,22 +19,20 @@ const searchOptions = {
   matchAllTokens: true,
   threshold: 0.2,
   location: 0,
-  distance: 101,
+  distance: 101
 };
 const linkSearch = new Fuse(SearchPattern, searchOptions);
 
 export default class SearchBar extends Component {
-  static propTypes = {
-    placeholder: PropTypes.string.isRequired,
-  }
-  constructor(props) {
+
+  constructor (props) {
     super(props);
     this.state = {
       query: ''
     };
     this._onSubmit = this._onSubmit.bind(this);
   }
-  _onSubmit() {
+  _onSubmit () {
     const { query } = this.state;
     if (query === '') {
       return Alert.alert('Gib zuerst was ins Suchfeld ein');
@@ -52,7 +49,7 @@ export default class SearchBar extends Component {
       });
     }
   }
-  render() {
+  render () {
     const { placeholder } = this.props;
     return (
       <View style={styles.container}>
@@ -64,14 +61,14 @@ export default class SearchBar extends Component {
           onChangeText={(text) => this.setState({ query: text })}
           value={this.state.query}
           underlineColorAndroid='rgba(0,0,0,0)'
-          blurOnSubmit={true}
+          blurOnSubmit
           autoFocus={false}
         />
         <TouchableOpacity onPress={this._onSubmit} style={styles.searchButton}>
           <Icon name='search' size={20} color='#fff' />
         </TouchableOpacity>
       </View>
-    )
+    );
   }
 }
 const styles = StyleSheet.create({
@@ -80,14 +77,14 @@ const styles = StyleSheet.create({
     paddingVertical: 5,
     borderRadius: 5,
     backgroundColor: '#02B875',
-    marginHorizontal: 7,
+    marginHorizontal: 7
   },
   container: {
     marginVertical: 10,
-    flexDirection: 'row',
+    flexDirection: 'row'
   },
   searcher: {
-    flex: .9,
+    flex: 0.9,
     height: 32,
     borderWidth: 0,
     borderRadius: 5,
@@ -96,6 +93,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: 15,
     color: '#585858',
     fontSize: 14,
-    marginLeft: 10,
-  },
+    marginLeft: 10
+  }
 });

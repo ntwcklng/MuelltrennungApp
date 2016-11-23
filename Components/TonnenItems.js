@@ -1,41 +1,34 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import TonneView from './Views/TonneView';
 import Tonnen from './Tonnen';
-import HeadlineText from './HeadlineText';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import * as Animatable from 'react-native-animatable';
 import {
   Text,
   StyleSheet,
   TouchableOpacity,
-  ScrollView,
   View,
   Image
 } from 'react-native';
 
-
 export default class TonnenItems extends Component {
-  static propTypes = {
-    navigator: PropTypes.object.isRequired,
-  }
-  constructor(props, context) {
+  constructor (props, context) {
     super(props, context);
     this._onPressBtn = this._onPressBtn.bind(this);
   }
-  _onPressBtn(tonne) {
-    const title = tonne.toUpperCase();
+  _onPressBtn (tonne) {
     this.props.navigator.push({
       id: 'tonneview',
       component: TonneView,
       passProps: { tonne }
-    })
+    });
   }
-  render() {
+  render () {
     let showDelay = 50;
     const TonnenItems = Tonnen.map((tonne, i) => {
       showDelay = showDelay + 50;
       let MuellImg;
-      switch(tonne.name) {
+      switch (tonne.name) {
         case 'blau':
           MuellImg = require('./Images/Blaue.png');
           break;
@@ -60,26 +53,27 @@ export default class TonnenItems extends Component {
         case 'elektro':
           MuellImg = require('./Images/Elektro.png');
           break;
-      };
-      return (
-        <Animatable.View delay={showDelay} animation='fadeInUp' easing='ease-out' duration={400} key={tonne.name}><TouchableOpacity
+      }
 
-          onPress={() => this._onPressBtn(tonne.name)}
-          style={styles.TonnenButton}>
-          <View>
-            <View style={styles.Item}>
+      return (
+        <Animatable.View delay={showDelay} animation='fadeInUp' easing='ease-out' duration={400} key={tonne.name}>
+          <TouchableOpacity
+            onPress={() => this._onPressBtn(tonne.name)}
+            style={styles.TonnenButton}>
+            <View>
+              <View style={styles.Item}>
                 <Image
                   source={MuellImg}
                   style={styles.ImgBtn}
                 />
-                <Icon name="chevron-right" size={30} color='#02B875' />
+                <Icon name='chevron-right' size={30} color='#02B875' />
+              </View>
+              <Text style={styles.TonnenDesc}>{tonne.desc}</Text>
             </View>
-          <Text style={styles.TonnenDesc}>{tonne.desc}</Text>
-          </View>
-        </TouchableOpacity>
+          </TouchableOpacity>
         </Animatable.View>
-      )
-    })
+      );
+    });
     return <View>{TonnenItems}</View>;
   }
 }
@@ -87,13 +81,13 @@ const styles = StyleSheet.create({
   Item: {
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'space-around',
+    justifyContent: 'space-around'
   },
   TonnenDesc: {
     marginTop: 15,
     color: '#585858',
     textAlign: 'center',
-    flex: 1,
+    flex: 1
   },
   ImgBtn: {
     height: 100,
@@ -104,8 +98,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     marginBottom: 20,
     padding: 10,
-    flex:1,
+    flex: 1,
     alignItems: 'stretch',
     justifyContent: 'space-around'
-  },
+  }
 });

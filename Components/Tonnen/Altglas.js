@@ -4,14 +4,7 @@ import DoDont from '../DoDont.js';
 import AnimImg from '../AnimImg.js';
 import GlobalStyle from '../GlobalStyle.js';
 
-import {
-  Text,
-  StyleSheet,
-  TouchableHighlight,
-  ScrollView,
-  View,
-  Image,
-} from 'react-native';
+import { View } from 'react-native';
 
 const DO = [
   'leere Getränkeflaschen',
@@ -30,17 +23,18 @@ const DONT = [
   'Weihnachtsbaumkugeln',
   'Ceran-Kochfelder',
   'Behälter aus Bleikristall wie z.b. Blumenvasen, Aschenbecher oder Weingläser',
-  'Autoscheiben und -lampen',
+  'Autoscheiben und -lampen'
 ];
 
-
 export default class Altglas extends Component {
-  render() {
+  render () {
     return (
       <View style={GlobalStyle.containerTonne}>
-        <HeadlineText mainColor={true} center={true}>Altglas</HeadlineText>
+        <HeadlineText mainColor center>
+          Altglas
+        </HeadlineText>
         <AnimImg tonne='altglas' />
-        <DoDont do={DO} dont={DONT}/>
+        <DoDont do={DO} dont={DONT} />
       </View>
     );
   }

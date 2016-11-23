@@ -4,14 +4,7 @@ import DoDont from '../DoDont.js';
 import GlobalStyle from '../GlobalStyle.js';
 import AnimImg from '../AnimImg.js';
 
-import {
-  Text,
-  StyleSheet,
-  TouchableHighlight,
-  ScrollView,
-  View,
-  Image,
-} from 'react-native';
+import { View } from 'react-native';
 
 const DO = [
   'Alles, mit dem grünen Punkt',
@@ -33,14 +26,15 @@ const DONT = [
   'Pappkartons'
 ];
 
-
 export default class GelbeTonne extends Component {
-  render() {
+  render () {
     return (
       <View style={GlobalStyle.containerTonne}>
-        <HeadlineText mainColor={true} center={true}>Gelbe Tonne</HeadlineText>
+        <HeadlineText mainColor center>
+          Gelbe Tonne
+        </HeadlineText>
         <AnimImg tonne='gelb' />
-        <DoDont do={DO} dont={DONT}/>
+        <DoDont do={DO} dont={DONT} />
       </View>
     );
   }

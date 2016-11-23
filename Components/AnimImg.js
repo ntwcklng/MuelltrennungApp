@@ -1,17 +1,10 @@
 import React, { Component } from 'react';
 import GlobalStyle from './GlobalStyle';
 
-import {
-  StyleSheet,
-  View,
-  Image,
-  Animated,
-  TouchableWithoutFeedback,
-} from 'react-native';
-
+import { StyleSheet, View, Image, Animated, TouchableWithoutFeedback } from 'react-native';
 
 export default class AnimImg extends Component {
-  constructor(props, context) {
+  constructor (props, context) {
     super(props, context);
     this.state = {
       bounceVal: new Animated.Value(0)
@@ -19,26 +12,26 @@ export default class AnimImg extends Component {
     this.bounceImgOnRender = this.bounceImgOnRender.bind(this);
     this.bounceImgOnPress = this.bounceImgOnPress.bind(this);
   }
-  bounceImgOnPress() {
+  bounceImgOnPress () {
     this.state.bounceVal.setValue(230);
     Animated.spring(
       this.state.bounceVal,
       { toValue: 200, fiction: 9, tension: 50 }
     ).start();
   }
-  bounceImgOnRender(val) {
+  bounceImgOnRender (val) {
     Animated.spring(
       this.state.bounceVal,
       { toValue: 200, fiction: 9, tension: 50 }
     ).start();
   }
-  componentDidMount() {
+  componentDidMount () {
     this.state.bounceVal.setValue(-500);
     this.bounceImgOnRender();
   }
-  render() {
+  render () {
     let MuellImg;
-    switch(this.props.tonne) {
+    switch (this.props.tonne) {
       case 'blau':
         MuellImg = require('./Images/Result_Blau.png');
         break;
@@ -60,13 +53,12 @@ export default class AnimImg extends Component {
       case 'sondermüll':
         MuellImg = require('./Images/Result_Sonder-Sperrmuell.png');
         break;
-    };
+    }
     return (
       <View style={styles.container}>
-        <TouchableWithoutFeedback
-        onPress={this.bounceImgOnPress}>
+        <TouchableWithoutFeedback onPress={this.bounceImgOnPress}>
           <View>
-            <Image resizeMode='contain' source={require('./Images/Pfeil.png')} style={GlobalStyle.imgPfeil}/>
+            <Image resizeMode='contain' source={require('./Images/Pfeil.png')} style={GlobalStyle.imgPfeil} />
             <Animated.Image resizeMode='contain' source={MuellImg} style={{width: this.state.bounceVal, height: this.state.bounceVal, alignSelf: 'center'}} />
           </View>
         </TouchableWithoutFeedback>
@@ -74,8 +66,9 @@ export default class AnimImg extends Component {
     );
   }
 }
+
 const styles = StyleSheet.create({
   container: {
-    marginBottom: 40,
-  },
+    marginBottom: 40
+  }
 });

@@ -4,14 +4,7 @@ import DoDont from '../DoDont.js';
 import GlobalStyle from '../GlobalStyle.js';
 import AnimImg from '../AnimImg.js';
 
-import {
-  Text,
-  StyleSheet,
-  TouchableHighlight,
-  ScrollView,
-  View,
-  Image,
-} from 'react-native';
+import { View } from 'react-native';
 
 const DO = [
   'Briefumschläge',
@@ -35,14 +28,15 @@ const DONT = [
   'Wattepads'
 ];
 
-
 export default class BlaueTonne extends Component {
-  render() {
+  render () {
     return (
       <View style={GlobalStyle.containerTonne}>
-        <HeadlineText mainColor={true} center={true}>Blaue Tonne</HeadlineText>
+        <HeadlineText mainColor center>
+          Blaue Tonne
+        </HeadlineText>
         <AnimImg tonne='blau' />
-        <DoDont do={DO} dont={DONT}/>
+        <DoDont do={DO} dont={DONT} />
       </View>
     );
   }

@@ -4,14 +4,7 @@ import DoDont from '../DoDont.js';
 import AnimImg from '../AnimImg.js';
 import GlobalStyle from '../GlobalStyle.js';
 
-import {
-  Text,
-  StyleSheet,
-  TouchableHighlight,
-  ScrollView,
-  View,
-  Image,
-} from 'react-native';
+import { View } from 'react-native';
 
 const DO = [
   'Lacke, Farben, Verdünnung',
@@ -20,7 +13,7 @@ const DO = [
   'Pflanzenschutzmittel',
   'Batterien, Knopfzellen, Akkus',
   'Leuchtstoffröhren, Thermometer (Quecksilber)',
-  'Fotochemikalien',
+  'Fotochemikalien'
 ];
 
 const DONT = [
@@ -32,16 +25,21 @@ const DONT = [
   'Elektroschrott'
 ];
 
-
 export default class Sondermuell extends Component {
-  render() {
+  render () {
     return (
       <View style={GlobalStyle.containerTonne}>
-        <HeadlineText mainColor={true} center={true}>Sondermüll</HeadlineText>
+        <HeadlineText mainColor center>
+          Sondermüll
+        </HeadlineText>
         <AnimImg tonne='sondermüll' />
-        <Text style={GlobalStyle.infoText}>Informiere dich bei deiner Stadt wo du Sondermüll entsorgen bzw. anmelden kannst.</Text>
-        <Text style={GlobalStyle.infoText}>Batterien und Leuchtstoffröhren kannst du oftmals im Baumarkt/Supermarkt in dafür vorgesehene Boxen entsorgen. </Text>
-        <DoDont do={DO} dont={DONT}/>
+        <Text style={GlobalStyle.infoText}>
+          Informiere dich bei deiner Stadt wo du Sondermüll entsorgen bzw. anmelden kannst.
+        </Text>
+        <Text style={GlobalStyle.infoText}>
+          Batterien und Leuchtstoffröhren kannst du oftmals im Baumarkt/Supermarkt in dafür vorgesehene Boxen entsorgen.
+        </Text>
+        <DoDont do={DO} dont={DONT} />
       </View>
     );
   }

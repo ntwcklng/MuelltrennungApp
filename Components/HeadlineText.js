@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import {
-  Text,
+  Text
 } from 'react-native';
 
-
 export default class HeadlineText extends Component {
-  render() {
+  render () {
     const textColor = (this.props.mainColor) ? '#02B875' : '#585858';
     const textAlign = (this.props.center) ? 'center' : 'left';
     return (
