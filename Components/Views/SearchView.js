@@ -1,20 +1,19 @@
 import React, { Component } from 'react';
 
-import {
-  Text,
-  View,
-} from 'react-native';
+import { Text, View} from 'react-native';
 
 export default class SearchView extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props);
   }
-  render() {
+  render () {
     const { placeholder } = this.props;
     return (
       <View style={{marginTop: 200}}>
-        <Text>{this.props.query}</Text>
+        <Text>
+          {this.props.query}
+        </Text>
       </View>
-    )
+    );
   }
-}
+};

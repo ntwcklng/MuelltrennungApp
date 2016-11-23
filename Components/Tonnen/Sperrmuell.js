@@ -4,7 +4,7 @@ import DoDont from '../DoDont.js';
 import AnimImg from '../AnimImg.js';
 import GlobalStyle from '../GlobalStyle.js';
 
-import { View } from 'react-native';
+import { View, Text } from 'react-native';
 
 const DO = [
   'Möbel',

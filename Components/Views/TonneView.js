@@ -6,21 +6,13 @@ import BioTonne from '../Tonnen/Bio';
 import Altglas from '../Tonnen/Altglas';
 import Sondermuell from '../Tonnen/Sondermuell';
 import Sperrmuell from '../Tonnen/Sperrmuell';
-import HeadlineText from '../HeadlineText';
 import GlobalStyle from '../GlobalStyle';
-import {
-  Text,
-  StyleSheet,
-  TouchableHighlight,
-  ScrollView,
-  View,
-} from 'react-native';
-
+import { Text, StyleSheet, ScrollView, View } from 'react-native';
 
 export default class TonneView extends Component {
-  render() {
+  render () {
     let Tonne;
-    switch(this.props.tonne) {
+    switch (this.props.tonne) {
       case 'blau':
         Tonne = (<BlaueTonne />);
         break;
@@ -42,26 +34,26 @@ export default class TonneView extends Component {
       case 'sondermüll':
         Tonne = (<Sondermuell />);
         break;
-      case 'elektro':
-        Tonne = (<Elektro />);
-        break;
     }
     return (
       <View style={styles.container}>
         <ScrollView style={{padding: 20}}>
           {this.props.searchText &&
-            <Text style={GlobalStyle.normalText}>
-            Du hast nach <Text style={{fontWeight: 'bold'}}>{this.props.searchText}</Text> gesucht. Wahrscheinlich gehört das hier rein.
-            </Text>
-          }
+          <Text style={GlobalStyle.normalText}>
+            Du hast nach
+            <Text style={{fontWeight: 'bold'}}>
+              {this.props.searchText}
+            </Text> gesucht. Wahrscheinlich gehört das hier rein.
+            </Text>}
           {Tonne}
         </ScrollView>
       </View>
     );
   }
 }
+
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-  },
+    flex: 1
+  }
 });
