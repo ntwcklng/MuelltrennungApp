@@ -5,7 +5,7 @@ module.exports = [
   },
   {
     'TONNE': 'gelb',
-    'items': 'grünerpunkt alu aluschale alufolie dosen duschgelflasche becher kunststoff kronkorken margarinebecher müslibeutel tetrapak milchtüte zahnpastetube joghurtbecher folie deodose deoflasche getränkedose coladose metallverpackung beutel'
+    'items': 'grünerpunkt alu aluschale alufolie aluminium dosen duschgelflasche becher kunststoff kronkorken margarinebecher müslibeutel tetrapak milchtüte zahnpastetube joghurtbecher folie deodose deoflasche getränkedose coladose metallverpackung beutel'
   },
   {
     'TONNE': 'blau',
@@ -18,5 +18,9 @@ module.exports = [
   {
     'TONNE': 'altglas',
     'items': 'senfglas senfgläser getränkeflasche flaschen konservengläser marmeladengläser glas schraubglas trinkglas'
+  },
+  {
+    'TONNE': 'sondermüll',
+    'items': 'polystyrol'
   }
 ];
