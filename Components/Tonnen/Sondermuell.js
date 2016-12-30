@@ -17,7 +17,7 @@ const DO = [
 ];
 
 const DONT = [
-  'Eimer von Wandfarbe, die leer oder vollständig eingetrocknet sind',
+  'Eimer von Wandfarbe (leer bzw. eingetrocknet)',
   'Leere Spraydosen',
   'Leere Reinigungsmittelflaschen',
   'Aluminium',
